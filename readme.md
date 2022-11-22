@@ -13,3 +13,9 @@ The goal of this challenge was to use node/javascript to create a command line a
 </ul>
 
 ## Video Demo
+
+[Application Demonstration Video](./render/Untitled_%20Nov%2021%2C%202022%209_22%20PM.webm)
+
+## Application Readme
+
+Running the application using node index.js will prompt the user for questions and after all input is complete, the generated readme file will be created in the render folder. A sample readme that was generated using this app has been included in the render folder: [sampleReadme](./render/sampleReadme.md)
