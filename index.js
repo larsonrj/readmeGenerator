@@ -31,6 +31,42 @@ const questions = [
       "The Unlicense",
     ],
   },
+  {
+    type: "input",
+    message: "Provide a brief description of this project:",
+    name: "description",
+  },
+  {
+    type: "input",
+    message: "Provide a brief explanation for installation information:",
+    name: "install",
+  },
+  {
+    type: "input",
+    message: "Provide details for how this application is intended to be used:",
+    name: "usage",
+  },
+  {
+    type: "input",
+    message:
+      "Provide details for how users can contribute to this application:",
+    name: "contributing",
+  },
+  {
+    type: "input",
+    message: "Provide details for how users can test this application:",
+    name: "tests",
+  },
+  {
+    type: "input",
+    message: "Provide your github username:",
+    name: "username",
+  },
+  {
+    type: "input",
+    message: "Provide your email address:",
+    name: "email",
+  },
 ];
 
 // TODO: Create a function to initialize app
@@ -38,11 +74,12 @@ function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      console.log(answers);
+      // After being prompted with questions, the answers are used in the generate markdown function exported from generateMarkdown.js
       return generateMarkdown(answers);
     })
     .then(function (readmeText) {
-      fs.writeFile("readme.md", readmeText, (err) =>
+      // After the text for the readme has been generated it is created in the render folder.
+      fs.writeFile("./render/readme.md", readmeText, (err) =>
         err ? console.error(err) : console.log("Success!")
       );
     });
